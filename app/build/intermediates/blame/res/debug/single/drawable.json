@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\toggle_status_changed.xml",
+        "source": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\src\\main\\res\\drawable\\toggle_status_changed.xml"
+    },
+    {
         "merged": "S:\\Android\\workspace\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\toggle_status_changed.xml",
         "source": "S:\\Android\\workspace\\BluetoothCarLink\\app\\src\\main\\res\\drawable\\toggle_status_changed.xml"
     }

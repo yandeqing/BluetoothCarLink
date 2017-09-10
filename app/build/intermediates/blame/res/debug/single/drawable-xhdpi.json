@@ -1,7 +1,15 @@
 [
     {
+        "merged": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\toggle_on.png",
+        "source": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\src\\main\\res\\drawable-xhdpi\\toggle_on.png"
+    },
+    {
         "merged": "S:\\Android\\workspace\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\icon.png",
         "source": "S:\\Android\\workspace\\BluetoothCarLink\\app\\src\\main\\res\\drawable-xhdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\icon.png",
+        "source": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\src\\main\\res\\drawable-xhdpi\\icon.png"
     },
     {
         "merged": "S:\\Android\\workspace\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
@@ -16,12 +24,32 @@
         "source": "S:\\Android\\workspace\\BluetoothCarLink\\app\\src\\main\\res\\drawable-xhdpi\\arrow_right.png"
     },
     {
+        "merged": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\toggle_off.png",
+        "source": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\src\\main\\res\\drawable-xhdpi\\toggle_off.png"
+    },
+    {
         "merged": "S:\\Android\\workspace\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\wheel.png",
         "source": "S:\\Android\\workspace\\BluetoothCarLink\\app\\src\\main\\res\\drawable-xhdpi\\wheel.png"
     },
     {
         "merged": "S:\\Android\\workspace\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\bg1.png",
         "source": "S:\\Android\\workspace\\BluetoothCarLink\\app\\src\\main\\res\\drawable-xhdpi\\bg1.png"
+    },
+    {
+        "merged": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\arrow_right.png",
+        "source": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\src\\main\\res\\drawable-xhdpi\\arrow_right.png"
+    },
+    {
+        "merged": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\bg1.png",
+        "source": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\src\\main\\res\\drawable-xhdpi\\bg1.png"
+    },
+    {
+        "merged": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ic_launcher.png",
+        "source": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\wheel.png",
+        "source": "C:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\src\\main\\res\\drawable-xhdpi\\wheel.png"
     },
     {
         "merged": "S:\\Android\\workspace\\BluetoothCarLink\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\toggle_off.png",

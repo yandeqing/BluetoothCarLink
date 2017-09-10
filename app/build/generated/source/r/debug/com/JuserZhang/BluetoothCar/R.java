@@ -77,10 +77,10 @@ containing a value of this type.
         public static final int device_name=0x7f080008;
         public static final int fast=0x7f080000;
         public static final int medium=0x7f080001;
-        public static final int rudder=0x7f080005;
+        public static final int rudder=0x7f080004;
         public static final int slow=0x7f080002;
-        public static final int text_view=0x7f080006;
-        public static final int toggle=0x7f080004;
+        public static final int text_view=0x7f080005;
+        public static final int toggle=0x7f080006;
         public static final int wheel_view=0x7f080007;
         public static final int whorl_view=0x7f080003;
     }

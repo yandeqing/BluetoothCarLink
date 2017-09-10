@@ -1,14 +1,5 @@
 package com.JuserZhang.BluetoothCar;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.UUID;
-
-import com.JuserZhang.BluetoothCar.util.Logger;
-import com.JuserZhang.BluetoothCar.widget.Direction;
-import com.JuserZhang.BluetoothCar.widget.Rudder;
-import com.JuserZhang.BluetoothCar.widget.Rudder.RudderListener;
-
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -28,6 +19,15 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
+
+import com.JuserZhang.BluetoothCar.util.Logger;
+import com.JuserZhang.BluetoothCar.widget.Direction;
+import com.JuserZhang.BluetoothCar.widget.Rudder;
+import com.JuserZhang.BluetoothCar.widget.Rudder.RudderListener;
+
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.UUID;
 
 public class MainActivity extends Activity implements RudderListener, SensorEventListener {
     // 调试用
@@ -259,9 +259,9 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
 
                 @Override
                 public void run() {
-                 //   Toaster.shortToastShow(MainActivity.this, "连接超时，被服务器君抛弃了::>_<::");
+                    //   Toaster.shortToastShow(MainActivity.this, "连接超时，被服务器君抛弃了::>_<::");
                     // 结束程序
-                  //  MainActivity.this.finish();
+                    //  MainActivity.this.finish();
                 }
             });
         }
@@ -270,8 +270,8 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
     @Override
     public void onSteeringWheelChanged(int action, Direction direction) {
         if (action == Rudder.ACTION_RUDDER) {
+            onAnimated(true);
             switch (direction) {
-
                 case LEFT_DOWN_DIR:
                     Logger.d(TAG, "[1] --> left down...");
                     mTextView.setText("左后方");

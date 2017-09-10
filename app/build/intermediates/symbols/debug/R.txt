@@ -19,10 +19,10 @@ int id device_address 0x7f080009
 int id device_name 0x7f080008
 int id fast 0x7f080000
 int id medium 0x7f080001
-int id rudder 0x7f080005
+int id rudder 0x7f080004
 int id slow 0x7f080002
-int id text_view 0x7f080006
-int id toggle 0x7f080004
+int id text_view 0x7f080005
+int id toggle 0x7f080006
 int id wheel_view 0x7f080007
 int id whorl_view 0x7f080003
 int layout activity_device_scan 0x7f030000
