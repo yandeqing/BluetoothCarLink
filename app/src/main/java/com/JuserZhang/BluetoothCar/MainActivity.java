@@ -15,12 +15,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.widget.CompoundButton;
-import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
-import com.JuserZhang.BluetoothCar.util.Logger;
+import com.JuserZhang.BluetoothCar.util.LogUtil;
 import com.JuserZhang.BluetoothCar.widget.Direction;
 import com.JuserZhang.BluetoothCar.widget.Rudder;
 import com.JuserZhang.BluetoothCar.widget.Rudder.RudderListener;
@@ -31,7 +30,9 @@ import java.util.UUID;
 
 public class MainActivity extends Activity implements RudderListener, SensorEventListener {
     // 调试用
-    private static final String TAG = "MainActivity";
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final boolean debug = true;
+
     // 蓝牙UUID
     private static final String SPP_UUID = "00001101-0000-1000-8000-00805F9B34FB";
 
@@ -111,9 +112,19 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
         mTextView = (TextView) findViewById(R.id.text_view);
         mRudder = (Rudder) findViewById(R.id.rudder);
         mWheelView = (ImageView) findViewById(R.id.wheel_view);
+
+        // 设置监听器
+        mRudder.setOnRudderListener(this);
+
+        // 加载动画
+        mAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
+
+        // 设置匀速旋转速率
+        mAnimation.setInterpolator(new LinearInterpolator());
+
         mToggle = (ToggleButton) findViewById(R.id.toggle);
 
-        mToggle.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        mToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -128,15 +139,6 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
                 }
             }
         });
-
-        // 设置监听器
-        mRudder.setOnRudderListener(this);
-
-        // 加载动画
-        mAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate);
-
-        // 设置匀速旋转速率
-        mAnimation.setInterpolator(new LinearInterpolator());
     }
 
     /**
@@ -147,7 +149,7 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
         if (bundle != null) {
             mBluetoothDevice = bundle.getParcelable("device");
             if (mBluetoothDevice != null) {
-                Logger.d(TAG, mBluetoothDevice.getName() + "------" + mBluetoothDevice.getAddress());
+                LogUtil.i(debug, TAG, mBluetoothDevice.getName() + "------" + mBluetoothDevice.getAddress());
                 new Thread(mConnRun).start();
             }
         }
@@ -179,7 +181,7 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
                 try {
                     mSocket.close();
                 } catch (IOException e1) {
-                    Logger.e(TAG, e1.getMessage());
+                    LogUtil.e(debug, TAG, e1.getMessage());
                 }
             }
         }
@@ -192,7 +194,7 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
                 try {
                     mSocket.close();
                 } catch (IOException e1) {
-                    Logger.e(TAG, e1.getMessage());
+                    LogUtil.e(debug, TAG, e1.getMessage());
                 }
             }
         }
@@ -205,7 +207,7 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
                 try {
                     mOutS.close();
                 } catch (IOException e1) {
-                    Logger.e(TAG, e.getMessage());
+                    LogUtil.e(debug, TAG, e.getMessage());
                 }
             }
 
@@ -213,7 +215,7 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
                 try {
                     mSocket.close();
                 } catch (IOException e1) {
-                    Logger.e(TAG, e.getMessage());
+                    LogUtil.e(debug, TAG, e.getMessage());
                 }
             }
         }
@@ -227,7 +229,7 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
             try {
                 mOutS.close();
             } catch (IOException e) {
-                Logger.e(TAG, e.getMessage());
+                LogUtil.e(debug, TAG, e.getMessage());
             }
         }
 
@@ -235,7 +237,7 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
             try {
                 mSocket.close();
             } catch (IOException e) {
-                Logger.e(TAG, e.getMessage());
+                LogUtil.e(debug, TAG, e.getMessage());
             }
         }
     }
@@ -270,52 +272,51 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
     @Override
     public void onSteeringWheelChanged(int action, Direction direction) {
         if (action == Rudder.ACTION_RUDDER) {
-            onAnimated(true);
             switch (direction) {
                 case LEFT_DOWN_DIR:
-                    Logger.d(TAG, "[1] --> left down...");
+                    LogUtil.i(debug, TAG, "[1] --> left down...");
                     mTextView.setText("左后方");
                     data[0] = 0x07;
                     break;
 
                 case LEFT_DIR:
-                    Logger.d(TAG, "[2] --> turn left...");
+                    LogUtil.i(debug, TAG, "[2] --> turn left...");
                     mTextView.setText("左转");
                     data[0] = 0x03;
                     break;
 
                 case LEFT_UP_DIR:
-                    Logger.d(TAG, "[3] --> left up...");
+                    LogUtil.i(debug, TAG, "[3] --> left up...");
                     mTextView.setText("左前方");
                     data[0] = 0x05;
                     break;
 
                 case UP_DIR:
-                    Logger.d(TAG, "[4] --> go forward...");
+                    LogUtil.i(debug, TAG, "[4] --> go forward...");
                     mTextView.setText("前进");
                     data[0] = 0x01;
                     break;
 
                 case RIGHT_UP_DIR:
-                    Logger.d(TAG, "[5] --> right up...");
+                    LogUtil.i(debug, TAG, "[5] --> right up...");
                     mTextView.setText("右前方");
                     data[0] = 0x06;
                     break;
 
                 case RIGHT_DIR:
-                    Logger.d(TAG, "[6] --> turn right...");
+                    LogUtil.i(debug, TAG, "[6] --> turn right...");
                     mTextView.setText("右转");
                     data[0] = 0x04;
                     break;
 
                 case RIGHT_DOWN_DIR:
-                    Logger.d(TAG, "[7] --> right down...");
+                    LogUtil.i(debug, TAG, "[7] --> right down...");
                     mTextView.setText("右后方");
                     data[0] = 0x08;
                     break;
 
                 case DOWN_DIR:
-                    Logger.d(TAG, "[8] --> go backward...");
+                    LogUtil.i(debug, TAG, "[8] --> go backward...");
                     mTextView.setText("后退");
                     data[0] = 0x02;
                     break;
@@ -326,7 +327,7 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
             writeStream(data);
 
         } else if (action == Rudder.ACTION_STOPPED) {
-            Logger.d(TAG, "[9] --> keep stopped..");
+            LogUtil.i(debug, TAG, "[9] --> keep stopped..");
             mTextView.setText("暂停");
             data[0] = 0x00;
             writeStream(data);
@@ -344,46 +345,46 @@ public class MainActivity extends Activity implements RudderListener, SensorEven
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+        LogUtil.i(debug, TAG, "【MainActivity.onSensorChanged()】【start】");
         if (event.sensor == null) {
             return;
         }
-
         if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
             float gx = event.values[0];
             float gy = event.values[1];
             float gz = event.values[2];
-
             if (gx < -3) {
-                Logger.d(TAG, "[10] --> go forward...");
+                LogUtil.i(debug, TAG, "[10] --> go forward...");
                 mTextView.setText("重力感应:前进");
                 data[0] = 0x01;
                 writeStream(data);
             } else if (gx > 6) {
-                Logger.d(TAG, "[11] --> go backward...");
+                LogUtil.i(debug, TAG, "[11] --> go backward...");
                 mTextView.setText("重力感应:后退");
                 data[0] = 0x02;
                 writeStream(data);
             } else if (gy < -4) {
-                Logger.d(TAG, "[12] --> turn left...");
+                LogUtil.i(debug, TAG, "[12] --> turn left...");
                 mTextView.setText("重力感应:左转");
                 data[0] = 0x03;
                 writeStream(data);
             } else if (gy > 4) {
-                Logger.d(TAG, "[13] --> turn right...");
+                LogUtil.i(debug, TAG, "[13] --> turn right...");
                 mTextView.setText("重力感应:右转");
                 data[0] = 0x04;
                 writeStream(data);
             } else {
-                Logger.d(TAG, "[14] --> gx:" + gx + "------gy:" + gy + "------gz:" + gz);
+                LogUtil.i(debug, TAG, "[14] --> gx:" + gx + "------gy:" + gy + "------gz:" + gz);
                 mTextView.setText("重力感应:暂停");
                 data[0] = 0x00;
                 writeStream(data);
+                onAnimated(false);
             }
         }
     }
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
+        LogUtil.i(debug, TAG, "【MainActivity.onAccuracyChanged()】【start】");
     }
 }

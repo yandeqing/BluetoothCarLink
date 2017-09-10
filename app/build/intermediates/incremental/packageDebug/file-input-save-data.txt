@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Sep 10 23:31:19 CST 2017
+#Mon Sep 11 00:35:06 CST 2017
 8.set=DEX
 1.base=C\:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\build\\intermediates\\res\\resources-debug.ap_
 1.file=C\:\\Users\\deqing\\AndroidStudioProjects\\BluetoothCarLink\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xhdpi-v4\\bg.jpg
