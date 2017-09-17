@@ -15,7 +15,7 @@
         <attr format="float" name="whorlview_sweepAngle"/>
         
         <attr format="float" name="whorlview_strokeWidth"/>
-    </declare-styleable></file><file path="C:\Users\deqing\AndroidStudioProjects\BluetoothCarLink\app\src\main\res\values\dimens.xml" qualifiers=""><dimen name="activity_vertical_margin">16dp</dimen><dimen name="activity_horizontal_margin">16dp</dimen></file><file path="C:\Users\deqing\AndroidStudioProjects\BluetoothCarLink\app\src\main\res\values\strings.xml" qualifiers=""><string name="app_name">小车遥控</string><string name="copyright">小组成员：海伊斯、梁娟、张鹏</string><string name="ellipsis">......</string></file><file path="C:\Users\deqing\AndroidStudioProjects\BluetoothCarLink\app\src\main\res\values\styles.xml" qualifiers=""><style name="MyToggleButton" parent="@android:style/Widget.CompoundButton">
+    </declare-styleable></file><file path="C:\Users\deqing\AndroidStudioProjects\BluetoothCarLink\app\src\main\res\values\dimens.xml" qualifiers=""><dimen name="activity_vertical_margin">16dp</dimen><dimen name="activity_horizontal_margin">16dp</dimen></file><file path="C:\Users\deqing\AndroidStudioProjects\BluetoothCarLink\app\src\main\res\values\strings.xml" qualifiers=""><string name="wait_dialog_title">请稍候...</string><string name="app_name">小车遥控</string><string name="ellipsis">......</string></file><file path="C:\Users\deqing\AndroidStudioProjects\BluetoothCarLink\app\src\main\res\values\styles.xml" qualifiers=""><style name="MyToggleButton" parent="@android:style/Widget.CompoundButton">
         <item name="android:button">@drawable/toggle_status_changed</item>
     </style><style name="AppTheme" parent="AppBaseTheme">
         

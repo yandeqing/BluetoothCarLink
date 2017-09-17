@@ -73,15 +73,21 @@ containing a value of this type.
         public static final int wheel=0x7f020008;
     }
     public static final class id {
-        public static final int device_address=0x7f080009;
-        public static final int device_name=0x7f080008;
+        public static final int accelerate_btn=0x7f08000c;
+        public static final int data_receied_tv=0x7f08000a;
+        public static final int decelerate_btn=0x7f08000d;
+        public static final int device_address=0x7f08000f;
+        public static final int device_name=0x7f08000e;
         public static final int fast=0x7f080000;
+        public static final int log_tv=0x7f080009;
         public static final int medium=0x7f080001;
-        public static final int rudder=0x7f080004;
+        public static final int rudder=0x7f080005;
         public static final int slow=0x7f080002;
-        public static final int text_view=0x7f080005;
-        public static final int toggle=0x7f080006;
-        public static final int wheel_view=0x7f080007;
+        public static final int speedvalue=0x7f08000b;
+        public static final int state_tv=0x7f080006;
+        public static final int text_view=0x7f080007;
+        public static final int toggle=0x7f080008;
+        public static final int wheel_view=0x7f080004;
         public static final int whorl_view=0x7f080003;
     }
     public static final class layout {
@@ -91,24 +97,14 @@ containing a value of this type.
     }
     public static final class string {
         public static final int app_name=0x7f070000;
-        public static final int copyright=0x7f070001;
-        public static final int ellipsis=0x7f070002;
+        public static final int ellipsis=0x7f070001;
+        public static final int wait_dialog_title=0x7f070002;
     }
     public static final class style {
         /**  API 11 theme customizations can go here. 
  API 14 theme customizations can go here. 
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-
-
-
-        
          */
         public static final int AppBaseTheme=0x7f050000;
-        /**  All customizations that are NOT specific to a particular API-level can go here. 
-         */
         public static final int AppTheme=0x7f050001;
         public static final int MyToggleButton=0x7f050002;
     }

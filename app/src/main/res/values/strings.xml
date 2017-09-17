@@ -3,6 +3,6 @@
 
     <string name="app_name">小车遥控</string>
     <string name="ellipsis">......</string>
-    <string name="copyright">小组成员：海伊斯、梁娟、张鹏</string>
+    <string name="wait_dialog_title">请稍候...</string>
 
 </resources>
